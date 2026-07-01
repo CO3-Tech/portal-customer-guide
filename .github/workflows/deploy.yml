@@ -1,8 +1,9 @@
 name: Deploy handbook to share.co3.io
 
 # Publishes the static handbook to the share.co3.io project on every push to
-# main. Uploads to the project ROOT (in place) via scripts/share-deploy.sh, so
-# the URL is stable and each run overwrites the previous files.
+# main. Runs scripts/share-deploy.sh, which uploads all site files and then
+# prunes stale remote files (a clean mirror) — the URL stays stable and
+# structural changes / renames leave no leftovers.
 #
 # Setup: add a repository SECRET named SHARE_API_KEY
 #   (Settings ▸ Secrets and variables ▸ Actions ▸ Secrets ▸ New repository secret).

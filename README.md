@@ -32,8 +32,11 @@ annotated screenshots captured live from the portal.
 ## Deploy
 
 Deployment is automatic: pushing to `main` triggers `.github/workflows/deploy.yml`,
-which runs `scripts/share-deploy.sh` to upload the site to share.co3.io **in place**
-— files at the project root are overwritten, so the URL stays stable.
+which runs `scripts/share-deploy.sh` to publish the site to share.co3.io as a
+**clean mirror** — every local file is uploaded (overwriting), then any remote file
+that no longer exists locally is pruned. Same-named images are replaced and
+renamed/removed/moved files leave no stale leftovers, while the live URL stays
+stable and is never emptied mid-deploy. Pass `--no-prune` to upload without pruning.
 
 **One-time setup:** add a repository **secret** `SHARE_API_KEY`
 (*Settings ▸ Secrets and variables ▸ Actions ▸ Secrets ▸ New repository secret*).
