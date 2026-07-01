@@ -264,7 +264,8 @@ html[data-theme="dark"] .qcard .qi { background: color-mix(in srgb, var(--lime) 
 }
 html[data-theme="dark"] .section__kicker { color: var(--lime); }
 .section__kicker .num {
-  display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 24px; height: 24px; padding: 0 6px; border-radius: 8px; white-space: nowrap;
   background: var(--lime-soft); color: var(--ink); font-size: 12px; font-weight: 800;
 }
 html[data-theme="dark"] .section__kicker .num { background: color-mix(in srgb, var(--lime) 20%, transparent); color: var(--lime); }
