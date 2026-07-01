@@ -8,8 +8,9 @@ annotated screenshots captured live from the portal.
 ## View it
 
 - **Locally:** open `index.html` in any modern browser (no build step, no server required).
-- **GitHub Pages:** enable Pages for this repo (Settings → Pages → deploy from `main` / root)
-  and the handbook is served as a static site.
+- **Hosted (share.co3.io):** the handbook is published to a share.co3.io project.
+  Every push to `main` runs the **Deploy** workflow (`.github/workflows/deploy.yml`),
+  which uploads the site files to the project root. Read access is gated by Keycloak SSO.
 
 ## What's inside
 
@@ -27,6 +28,27 @@ annotated screenshots captured live from the portal.
 - Screenshots framed in a browser chrome with numbered legends and click-to-zoom lightbox
 - Light / dark theme, reading-progress bar, fully responsive (desktop → mobile)
 - Keyboard-accessible with a skip link, focus management and reduced-motion support
+
+## Deploy
+
+Deployment is automatic: pushing to `main` triggers `.github/workflows/deploy.yml`,
+which runs `scripts/share-deploy.sh` to upload the site to share.co3.io **in place**
+— files at the project root are overwritten, so the URL stays stable.
+
+**One-time setup:** add a repository **secret** `SHARE_API_KEY`
+(*Settings ▸ Secrets and variables ▸ Actions ▸ Secrets ▸ New repository secret*).
+The target project id is set in the workflow (`SHARE_PROJECT`); override it with a
+repo **variable** of the same name if it ever changes.
+
+**Manual / local deploy:**
+
+```bash
+SHARE_API_KEY=<key> SHARE_PROJECT=<project-id> bash scripts/share-deploy.sh .
+bash scripts/share-deploy.sh --dry-run   # preview file list, no upload
+```
+
+> The API key has write + delete privileges — keep it in **Secrets**, never in a
+> plaintext variable, and never commit it.
 
 ## Notes
 
