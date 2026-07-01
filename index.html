@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CO3 Customer Portal — User Handbook</title>
+  <meta name="description" content="An interactive, illustrated guide to the CO3 Customer Portal: invite carriers, track shipments, manage your fleet, geofenced locations, consents and branded invitation emails." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e1513'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23b7e92b'>C3</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="progress"></div>
+
+  <!-- Mobile top bar -->
+  <header class="mobilebar">
+    <button class="iconbtn js-menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <span class="brand-mini">CO3 Handbook</span>
+    <button class="iconbtn js-open-search" aria-label="Search" style="margin-left:auto">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+    </button>
+    <button class="iconbtn js-theme" aria-label="Toggle theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+  </header>
+  <div class="scrim"></div>
+
+  <div class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="logo-badge">C3</div>
+        <div>
+          <div class="t">CO3 Portal</div>
+          <div class="s">User Handbook</div>
+        </div>
+      </div>
+      <div class="sidebar__search">
+        <button class="search-trigger js-open-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+          Search the handbook…
+          <span class="kbd">⌘K</span>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <div class="nav-group-label">Get started</div>
+        <a class="nav-link" data-target="welcome" href="#welcome"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg>Welcome</a>
+        <a class="nav-link" data-target="signing-in" href="#signing-in"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg>Signing in</a>
+        <a class="nav-link" data-target="navigation" href="#navigation"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/></svg>Finding your way</a>
+
+        <div class="nav-group-label">Your day-to-day</div>
+        <a class="nav-link" data-target="home" href="#home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>Home dashboard</a>
+        <a class="nav-link" data-target="carriers" href="#carriers"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Carriers</a>
+        <a class="nav-link" data-target="invite-carrier" href="#invite-carrier"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>Inviting a carrier</a>
+        <a class="nav-link" data-target="send-invitations" href="#send-invitations"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Sending invitations</a>
+
+        <div class="nav-group-label">Fleet &amp; shipments</div>
+        <a class="nav-link" data-target="assets" href="#assets"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10v8H3zM13 11h5l3 3v2h-8z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Assets</a>
+        <a class="nav-link" data-target="trackings" href="#trackings"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19c4 0 4-6 8-6s4 6 8 6"/><circle cx="4" cy="19" r="1.6"/><circle cx="20" cy="19" r="1.6"/><path d="M12 13V5"/></svg>Trackings</a>
+        <a class="nav-link" data-target="locations" href="#locations"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>My Locations</a>
+
+        <div class="nav-group-label">Network &amp; monitoring</div>
+        <a class="nav-link" data-target="consents" href="#consents"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>My Consents</a>
+        <a class="nav-link" data-target="subscriptions" href="#subscriptions"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 0 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 3 14.6H3a2 2 0 0 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 9 4.6h.1A2 2 0 0 1 13 3v.1A1.6 1.6 0 0 0 15 4.6a1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v.1a2 2 0 0 1 0 4Z"/></svg>Subscriptions</a>
+
+        <div class="nav-group-label">Invitation emails</div>
+        <a class="nav-link" data-target="branding" href="#branding"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 0 18 2.5 2.5 0 0 0 2-4 2 2 0 0 1 1.6-3.2H18a3 3 0 0 0 3-3A6 6 0 0 0 12 3Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7.5" r="1"/><circle cx="15" cy="8.5" r="1"/></svg>Invitation Branding</a>
+        <a class="nav-link" data-target="templates" href="#templates"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email Templates</a>
+
+        <div class="nav-group-label">Help</div>
+        <a class="nav-link" data-target="tips" href="#tips"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg>Tips &amp; shortcuts</a>
+        <a class="nav-link" data-target="faq" href="#faq"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a3 3 0 0 1 5.6 1c0 2-3 2.2-3 4"/><path d="M12 17h.01"/></svg>FAQ</a>
+        <a class="nav-link" data-target="glossary" href="#glossary"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>Glossary</a>
+      </nav>
+      <div class="sidebar__foot">
+        <button class="theme-toggle js-theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span class="js-theme-label">Dark</span> mode
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main" id="main-content" tabindex="-1">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero__grid"></div>
+        <div class="hero__inner">
+          <span class="eyebrow"><span class="dot"></span> CO3 Customer Portal · Interactive guide</span>
+          <h1>Everything you can do in the <span class="accent">CO3 Portal</span> — explained, step by step.</h1>
+          <p class="lede">Invite your transport partners, watch shipments move in real time, manage your connected fleet and saved locations, and brand the emails your carriers receive — all from one place. This handbook walks through every screen with annotated visuals.</p>
+          <button class="hero__search js-open-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+            <span>Search any feature, button or task…</span>
+            <span class="kbd">⌘K</span>
+          </button>
+          <div class="hero__stats">
+            <div class="st"><div class="n" id="hero-section-count">12</div><div class="l">guided sections</div></div>
+            <div class="st"><div class="n">Real-time</div><div class="l">GPS · tachograph · telemetry</div></div>
+            <div class="st"><div class="n">Light + Dark</div><div class="l">reads great on any screen</div></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- QUICK START -->
+      <h2 class="sr-only">Quick start</h2>
+      <div class="qstart">
+        <a class="qcard" href="#invite-carrier">
+          <div class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
+          <h3>Invite a carrier</h3><p>Send a branded invitation in under a minute.</p>
+        </a>
+        <a class="qcard" href="#trackings">
+          <div class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <h3>Track a shipment</h3><p>Follow a transport order on a live map.</p>
+        </a>
+        <a class="qcard" href="#assets">
+          <div class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10v8H3zM13 11h5l3 3v2h-8z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div>
+          <h3>See your fleet</h3><p>Inspect any connected vehicle's telemetry.</p>
+        </a>
+        <a class="qcard" href="#branding">
+          <div class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 0 18 2.5 2.5 0 0 0 2-4 2 2 0 0 1 1.6-3.2H18a3 3 0 0 0 3-3A6 6 0 0 0 12 3Z"/></svg></div>
+          <h3>Brand your emails</h3><p>Make invitations look like your company.</p>
+        </a>
+        <a class="qcard" href="#consents">
+          <div class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Manage who sees what</h3><p>Review every access given and received.</p>
+        </a>
+      </div>
+
+      <div class="content">
+
+        <!-- ================= WELCOME ================= -->
+        <section class="section" id="welcome">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">1</span> Get started</div>
+            <h2>Welcome to the CO3 Customer Portal</h2>
+            <p class="intro">The CO3 Customer Portal is your control room for collaborative transport visibility. It connects <strong>shippers</strong> (companies that send goods) with <strong>carriers</strong> (companies that move them), so that everyone sees the same trusted picture of where vehicles are and how shipments are progressing — without phone calls or spreadsheets.</p>
+          </div>
+
+          <p class="reveal">Depending on your role you'll use a slightly different mix of features, but the portal works the same way for everyone: a navigation sidebar on the left, your data in the centre, and account controls in the top-right.</p>
+
+          <h3>Who the portal is for</h3>
+          <div class="cardgrid reveal">
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+              <h4>If you are a shipper</h4>
+              <p>Invite carriers, request consent to see their vehicles, follow your transport orders, and subscribe to permanent monitoring for the trucks that matter most.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <h4>If you are a carrier</h4>
+              <p>Accept invitations, decide which vehicles each partner may see, and keep your sharing relationships and consents organised in one tidy list.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <h4>Consent-first by design</h4>
+              <p>Nothing is shared without an explicit, auditable consent. You can always see who you have given access to, and who has given access to you.</p>
+            </div>
+          </div>
+
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p><strong>New here?</strong> Read the next two sections — <a href="#signing-in">Signing in</a> and <a href="#navigation">Finding your way around</a> — then jump straight to whichever feature you need. Press <span class="kbd">⌘K</span> (or <span class="kbd">Ctrl K</span>) at any time to search this handbook.</p>
+          </div>
+        </section>
+
+        <!-- ================= SIGNING IN ================= -->
+        <section class="section" id="signing-in">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">2</span> Get started</div>
+            <h2>Signing in &amp; choosing your company</h2>
+            <p class="intro">The portal uses single sign-on. When you open it you are taken to the secure CO3 login screen; after you authenticate you land on your Home dashboard.</p>
+          </div>
+
+          <ol class="steps reveal">
+            <li><strong>Open the portal.</strong> Go to your portal address in the browser. If you are not signed in you'll be redirected to the CO3 login page automatically.</li>
+            <li><strong>Enter your credentials.</strong> Type your work email and password, then select <strong>Log In</strong>. Depending on how your organisation set up sign-in, you may also see options such as <em>Sign in with Google</em>.</li>
+            <li><strong>Land on Home.</strong> You arrive on the Home dashboard for your default company. You'll stay signed in until your session expires or you sign out, so you usually won't need to log in again right away.</li>
+          </ol>
+
+          <h3>Acting for the right company</h3>
+          <p>Many people belong to more than one company (for example a head office and a subsidiary). The <strong>Company switcher</strong> in the top-left of the header shows which company you are currently acting for. Everything you see — carriers, assets, locations, invitations — belongs to that company.</p>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io</div></div>
+              <div class="browserframe__img"><img src="assets/screens/company-switcher.png" alt="The company switcher dropdown open in the portal header, showing the active company QA Carrier." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">The company switcher opens from the top-left of the header. If you belong to several companies, they all appear here — pick one to switch context.</p>
+          </div>
+
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p><strong>Switching is instant and safe.</strong> When you change companies, every list refreshes to show only that company's data — you'll never accidentally see or act on another company's information.</p>
+          </div>
+        </section>
+
+        <!-- ================= NAVIGATION ================= -->
+        <section class="section" id="navigation">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">3</span> Get started</div>
+            <h2>Finding your way around</h2>
+            <p class="intro">Every page shares the same frame: a navigation sidebar on the left and a header across the top. Learn these five areas once and the whole portal feels familiar.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io</div></div>
+              <div class="browserframe__img"><img src="assets/screens/shell-anatomy.png" alt="The portal app shell with five highlighted areas: sidebar, company switcher, utility icons, account, theme toggle." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Navigation sidebar</strong> — jump between Home, Carriers, Assets, Trackings, My Locations and more. On desktop, <em>Collapse</em> at the bottom widens your workspace; on phones and tablets the sidebar tucks behind the ☰ menu button.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Company switcher</strong> — shows and changes the company you're acting for.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Messages, Notifications &amp; Settings ⚙</strong> — the gear opens <em>Invitation Branding</em> and <em>Email Templates</em>.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Your account</strong> — your name and how you signed in.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Light / Dark theme</strong> — switch the look to suit your screen and lighting.</span></li>
+            </ul>
+          </div>
+
+          <p>Two of the header icons open quick panels: <strong>Messages</strong> (the envelope) and <strong>Notifications</strong> (the bell). They gather updates relevant to you — when there's nothing new, they simply open an empty panel.</p>
+
+          <h3>The Settings ⚙ menu</h3>
+          <p>Two important features live behind the gear icon rather than in the sidebar, because they are set-up tasks you do occasionally rather than every day.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io · Settings</div></div>
+              <div class="browserframe__img"><img src="assets/screens/settings-menu.png" alt="Settings menu open, showing Invitation Branding, Email Templates and Sign out." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Invitation Branding</strong> — design the logo and colours used in your carrier-invitation emails. <a href="#branding">See the Branding section →</a></span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Email Templates</strong> — write the wording of those emails, in one or more languages. <a href="#templates">See the Templates section →</a></span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Sign out</strong> — end your session securely.</span></li>
+            </ul>
+          </div>
+
+          <h3>Light &amp; dark mode</h3>
+          <p>Use the theme toggle (top-right, or the button at the bottom of the sidebar) to switch between light and dark. The portal remembers your choice. Everything — charts, maps, status colours — is tuned to stay readable in both.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io · Dark mode</div></div>
+              <div class="browserframe__img"><img src="assets/screens/home-dark.png" alt="The Home dashboard shown in dark mode." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">The Home dashboard in dark mode. This handbook has the same toggle — try it in the sidebar.</p>
+          </div>
+        </section>
+
+        <!-- ================= HOME ================= -->
+        <section class="section" id="home">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">4</span> Your day-to-day</div>
+            <h2>The Home dashboard</h2>
+            <p class="intro">Home is your operational snapshot. At a glance you can see how many partners and vehicles you're connected to, how shipments are trending, and which invitations still need a nudge.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io</div></div>
+              <div class="browserframe__img"><img src="assets/screens/home-overview.png" alt="Home dashboard with the getting-started panel, KPI tiles and the trackings activity chart highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Getting-started panel</strong> — a friendly checklist when you're new. Once you're set up it shows “All set!”; dismiss it with <em>Got it</em>.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Snapshot tiles</strong> — live counts of Carriers, Assets, Locations and Trackings (scheduled, ongoing, completed). Some tiles have an ⓘ for a quick breakdown.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Trackings activity</strong> — a 60-day chart of ongoing vs. completed shipments by start date, so you can spot busy periods.</span></li>
+            </ul>
+          </div>
+
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p><strong>About the numbers in these screenshots.</strong> They come from a demo workspace, so figures like “537 ongoing” are illustrative. Your own portal will show your real partners, vehicles, locations and shipments.</p>
+          </div>
+
+          <h3>Things that need your attention</h3>
+          <p>Lower on the page, Home surfaces the items most likely to need action so you don't have to go hunting for them.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io</div></div>
+              <div class="browserframe__img"><img src="assets/screens/home-attention.png" alt="Carriers needing attention and Recent locations cards on the Home dashboard." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">4</span><span class="tx"><strong>Carriers needing attention</strong> — invitations that are still pending or have expired. Use the 3d / 7d / 14d buttons to filter by how long they've waited, then <em>Show more</em> to open the full list.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Recent locations</strong> — the five geofences you saved most recently, for quick reference.</span></li>
+            </ul>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>Every tile and card on Home is a shortcut. Clicking a count or a <em>Show more</em> link takes you to the matching list, already filtered.</p>
+          </div>
+        </section>
+
+        <!-- ================= CARRIERS ================= -->
+        <section class="section" id="carriers">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">5</span> Your day-to-day</div>
+            <h2>Carriers</h2>
+            <p class="intro">The Carriers page is your partner directory. It lists every carrier you've invited or connected with, their status, and exactly what each has consented to share.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/carriers</div></div>
+              <div class="browserframe__img"><img src="assets/screens/carriers-list.png" alt="The Carriers list with status tiles, search, filters, toolbar and the table highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Add carrier</strong> — opens the invitation form. <a href="#invite-carrier">Walkthrough below →</a></span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Status summary</strong> — how many partners are Approved, Pending or Inactive.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Search</strong> — find a carrier by company name or tax number.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Filters</strong> — narrow by Invitation status and CO3 platform status.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Toolbar</strong> — Import a CSV of carriers, Export the list, or Configure which columns are visible.</span></li>
+            </ul>
+          </div>
+
+          <h3>Reading the table</h3>
+          <p>Each row is one carrier. The columns tell you everything you need at a glance:</p>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Column</th><th>What it means</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Company</strong></td><td>The carrier's name, tax number and the contact email the invitation was sent to.</td></tr>
+                <tr><td><strong>Invitation Status</strong></td><td>Where the invitation stands — see the status guide below.</td></tr>
+                <tr><td><strong>CO3 Platform</strong></td><td>Whether that company is already <em>Connected</em> on CO3, <em>Invited</em>, or <em>Not on CO3</em> yet.</td></tr>
+                <tr><td><strong>Consent types</strong></td><td>The kinds of visibility the carrier has granted (e.g. Shipment tracking, Selective tour, Permanent monitoring).</td></tr>
+                <tr><td><strong>Connected</strong></td><td>The date the relationship was established.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Invitation statuses</h3>
+          <p>You can filter the list by status using the <em>Invitation status</em> button. The available states are:</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/carriers</div></div>
+              <div class="browserframe__img"><img src="assets/screens/carriers-status-filter.png" alt="The invitation status filter open with options Approved, Expired, Revoked, Not Requested, Pending, Rejected, Cancelled." loading="lazy" /></div>
+            </figure>
+          </div>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><span class="pill green">Approved</span></td><td>The carrier accepted and the relationship is live.</td></tr>
+                <tr><td><span class="pill amber">Pending</span></td><td>Invitation sent; waiting for the carrier to respond.</td></tr>
+                <tr><td><span class="pill grey">Not Requested</span></td><td>The carrier exists in your list but no invitation has been sent yet.</td></tr>
+                <tr><td><span class="pill grey">Expired</span></td><td>The invitation lapsed before it was accepted — re-invite to try again.</td></tr>
+                <tr><td><span class="pill grey">Rejected</span></td><td>The carrier declined the invitation.</td></tr>
+                <tr><td><span class="pill grey">Revoked</span></td><td>A previously granted access was withdrawn.</td></tr>
+                <tr><td><span class="pill grey">Cancelled</span></td><td>You cancelled the invitation.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>These are the same options you'll find behind the <em>Invitation status</em> filter shown above, so the picture and the table read the same way.</p>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>Tick <strong>Remember filters</strong> (just under the toolbar) and the portal will keep your search and filters next time you return to the page.</p>
+          </div>
+        </section>
+
+        <!-- ================= INVITE CARRIER ================= -->
+        <section class="section" id="invite-carrier">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">6</span> Your day-to-day</div>
+            <h2>Inviting a carrier</h2>
+            <p class="intro">Inviting a carrier sends them an email asking to connect on CO3. You only need a company name and an email address — everything else is optional.</p>
+          </div>
+
+          <ol class="steps reveal">
+            <li><strong>Open the form.</strong> On the Carriers page, select <strong>Add carrier</strong> (top-right).</li>
+            <li><strong>Fill in the essentials.</strong> Enter the <em>Carrier name</em> and a contact <em>Email</em>. These two fields are required.</li>
+            <li><strong>Add optional details (optional).</strong> Expand <em>Show optional fields</em> to record a contact name, phone number (with country code) and a company identifier such as a VAT number.</li>
+            <li><strong>Pick an invitation template.</strong> Choose which email template the carrier will receive. Your company default is selected automatically — the line beneath shows which consent the carrier will be asked to accept.</li>
+            <li><strong>Send it.</strong> Select <strong>Add carrier</strong>. The carrier appears in your list and receives the invitation email.</li>
+          </ol>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/carriers · Add carrier</div></div>
+              <div class="browserframe__img"><img src="assets/screens/carriers-add-modal.png" alt="The Add carrier dialog with fields numbered: carrier name, email, optional details, invitation template, and the Add carrier button." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Carrier name</strong> — required.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Email</strong> — required; this is who receives the invitation.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Optional details</strong> — contact name, phone (with country code) and company ID type (VAT, DUNS, EIN…).</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Invitation template</strong> — which email the carrier gets, and the consent it asks for.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Add carrier</strong> — sends the invitation and closes the dialog.</span></li>
+            </ul>
+          </div>
+
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p><strong>Already invited?</strong> If a carrier with the same email already has a pending invitation, the form will tell you inline and keep your entries, so nothing is sent twice.</p>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>Onboarding many partners at once? Use <strong>Import CSV</strong> in the toolbar to prepare a bulk invitation instead of adding carriers one by one.</p>
+          </div>
+
+          <h3>What your carrier sees</h3>
+          <p>It helps to know the experience on the other side. Your invitation email leads the carrier to a dedicated registration site, branded with your <a href="#branding">colours and logo</a>, where they connect to CO3.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>onboarding.co3.io</div></div>
+              <div class="browserframe__img"><img src="assets/screens/onboarding-start.png" alt="The carrier onboarding welcome screen with two choices: I already have an account, or Create a new account." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>I already have an account</strong> — existing CO3 companies sign in and simply accept the connection.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Create a new account</strong> — new companies register in about three minutes.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Language</strong> — the carrier can switch the page language to suit them.</span></li>
+            </ul>
+          </div>
+          <p>New companies follow a short, four-step wizard — <em>Company</em>, <em>Consents</em>, <em>Telematics</em> and <em>Assets</em> — that sets up their profile and the connection to you.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>onboarding.co3.io · Register</div></div>
+              <div class="browserframe__img"><img src="assets/screens/onboarding-register.png" alt="The carrier registration wizard step 1, Your Company, with a region selector, country, ID type, ID number and a Look up company button." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Progress steps</strong> — the carrier always sees where they are: Company → Consents → Telematics → Assets.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Region of operations</strong> — EMEA, Americas or Asia-Pacific.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Company lookup</strong> — they enter a tax/registration ID so CO3 can pre-fill their details.</span></li>
+            </ul>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <p>Once the carrier accepts the consent, the invitation in your Carriers list flips to <span class="pill green">Approved</span> and the consent appears under <em>Received</em> on your <a href="#consents">My Consents</a> page.</p>
+          </div>
+        </section>
+
+        <!-- ================= SEND INVITATIONS ================= -->
+        <section class="section" id="send-invitations">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">7</span> Your day-to-day</div>
+            <h2>Sending invitations &amp; tracking delivery</h2>
+            <p class="intro">Once a carrier is on your list you can (re-)send their invitation email and follow exactly what happened to it — when it was sent, to whom, and whether it succeeded.</p>
+          </div>
+
+          <p class="reveal">Each carrier row has a <strong>⋮ (row actions)</strong> button on the right. For invitations that are still open, it offers two actions.</p>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/carriers</div></div>
+              <div class="browserframe__img"><img src="assets/screens/carriers-row-actions.png" alt="A carrier row's actions menu open, showing Send invite and Notification history." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Open row actions (⋮)</strong> — the menu trigger at the end of each row.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Send invite</strong> — (re)sends the invitation email to that carrier. A small toast confirms it was sent.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Notification history</strong> — opens the full delivery log for that invitation.</span></li>
+            </ul>
+          </div>
+
+          <h3>The activity log</h3>
+          <p>Choosing <em>Notification history</em> opens a timeline of every event for that invitation, newest first — when it was created, each time it was sent, and the recipient address. If a send ever fails, the entry expands to show why, so you can fix it and try again.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/carriers · Activity log</div></div>
+              <div class="browserframe__img"><img src="assets/screens/carriers-history.png" alt="The Activity log dialog showing a SENT event and a CREATED event with timestamps." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">The activity log merges send attempts (SENT / FAILED) with lifecycle events such as CREATED, so you always know the full story.</p>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>The <em>Send invite</em> action only appears while an invitation is still open (Pending or not yet requested). Once a carrier has accepted or declined, there's nothing left to send.</p>
+          </div>
+        </section>
+
+        <!-- ================= ASSETS ================= -->
+        <section class="section" id="assets">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">8</span> Fleet &amp; shipments</div>
+            <h2>Assets</h2>
+            <p class="intro">Assets are the connected vehicles your partners share with you. The list shows every truck, trailer or van you currently have visibility into, and each one opens a rich detail view with live location and telemetry.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/assets</div></div>
+              <div class="browserframe__img"><img src="assets/screens/assets-list.png" alt="The Assets list with status tiles, plate search, filters, export toolbar and a row highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Status tiles</strong> — Pending, Active and Inactive vehicle counts.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search</strong> — find a vehicle by its licence plate.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Filters</strong> — by tracking mode, by carrier, and by vehicle type.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Export &amp; columns</strong> — download the list as CSV or choose visible columns.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Open a vehicle</strong> — click any row to see its full detail.</span></li>
+            </ul>
+          </div>
+
+          <h3>Inside a vehicle</h3>
+          <p>Opening a vehicle gives you a summary header (carrier, VIN, licence plate, status) and a set of tabs. You'll see the ones that apply to that vehicle — up to five.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/assets/…</div></div>
+              <div class="browserframe__img"><img src="assets/screens/asset-detail.png" alt="An asset detail page with the back arrow, summary header, tab bar and Details tab highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Go back</strong> — return to the list.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Summary header</strong> — carrier, VIN, plate and live status.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Tabs</strong> — Details, Drive &amp; rest, Map, Advanced data and Availability. You'll see the ones relevant to this vehicle.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Tab content</strong> — the selected tab's information.</span></li>
+            </ul>
+          </div>
+
+          <div class="cardgrid reveal">
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+              <h4>Details</h4>
+              <p>Classification and characteristics — vehicle type, make, emission standard and tax ID.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <h4>Drive &amp; rest</h4>
+              <p>Driving-time status from the tachograph — “next drive” and “daily drive” gauges so you know how long a vehicle can keep moving.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <h4>Map</h4>
+              <p>The vehicle's recent track on a map, with a 24h / 3d / 7d window and a playback slider to replay the journey.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 3 7-8"/><path d="M3 21h18"/></svg></div>
+              <h4>Advanced data</h4>
+              <p>Telemetry over time — movement, speed, fuel level, mileage, temperature zones and ignition.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <h4>Availability</h4>
+              <p>Who shares this vehicle with you and on what basis — owner vs. leased grant, and the consent type behind it. Appears when sharing details are available.</p>
+            </div>
+          </div>
+
+          <h4>Map &amp; route</h4>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/assets/… · Map</div></div>
+              <div class="browserframe__img"><img src="assets/screens/asset-map.png" alt="The Map tab of a vehicle showing its route across Poland with a playback timeline." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">Pick a time window (24h / 3d / 7d), then press play to replay the vehicle's movement at 1×–4× speed.</p>
+          </div>
+
+          <h4>Advanced telemetry</h4>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/assets/… · Advanced data</div></div>
+              <div class="browserframe__img"><img src="assets/screens/asset-advanced.png" alt="The Advanced data tab showing movement, speed, fuel level, mileage, temperature and ignition cards." loading="lazy" /></div>
+            </figure>
+          </div>
+          <h4>Drive &amp; rest</h4>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/assets/… · Drive &amp; rest</div></div>
+              <div class="browserframe__img"><img src="assets/screens/asset-drive-rest.png" alt="The Drive and rest tab showing Next drive and Daily drive gauges from the tachograph." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">Tachograph-derived gauges help you plan around legal driving and rest limits. <strong>Next drive</strong> is how long the vehicle can legally keep driving now; <strong>Daily drive</strong> is how much of today's permitted driving time is left.</p>
+          </div>
+          <h4>Exporting &amp; reporting</h4>
+          <p>From the Assets list you can <strong>Export to CSV</strong> (in the toolbar) to take the current, filtered list into a spreadsheet. Inside a vehicle, the <em>Map</em> and <em>Advanced data</em> tabs let you replay position and telemetry over a chosen 24h / 3d / 7d window; depending on your plan, a downloadable telemetry report for a date range may also be available.</p>
+
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>Which tabs and data points appear depends on what the vehicle's carrier has consented to share and what its hardware reports. A tab may be hidden if that data isn't available.</p>
+          </div>
+        </section>
+
+        <!-- ================= TRACKINGS ================= -->
+        <section class="section" id="trackings">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">9</span> Fleet &amp; shipments</div>
+            <h2>Trackings</h2>
+            <p class="intro">Trackings are your transport orders — the actual shipments moving between locations. Browse incoming and outgoing orders, then open one to follow its route, stops and emissions.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings</div></div>
+              <div class="browserframe__img"><img src="assets/screens/trackings-list.png" alt="The Trackings list with text search, status/type/date filters and the order table highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Search</strong> — by order number, licence plate or carrier.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Filters</strong> — by status, transport type, and an “active between” date range.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Open an order</strong> — click any row to open the tracking detail.</span></li>
+            </ul>
+          </div>
+          <p class="reveal">Each row shows the order number, licence plate, last known location, carrier, and the planned <em>From</em> → <em>To</em> stops with their time windows.</p>
+
+          <h3>Following a shipment</h3>
+          <p>Opening an order shows everything about that journey on one screen.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/ORDER-…</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-detail.png" alt="A tracking detail page with header, summary, route map and the Stops/CO2 details panel highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Header</strong> — the route (origin → destination), the shipper and carrier, and the live status (e.g. <em>Ongoing</em>).</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Summary</strong> — tracking duration, next stop, and how many assets and stops are involved.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Route map</strong> — the planned path with numbered stop markers.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Details</strong> — switch between <em>Stops</em> (each pickup/delivery with address, coordinates and planned times) and <em>CO₂</em> emissions.</span></li>
+            </ul>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>In the Stops list, use the small copy icon next to any coordinates to copy them — handy for pasting into another map or a message.</p>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>What you can open here depends on your role and on the data available for an order. For example, the <strong>CO₂</strong> tab and the live position only appear when emissions and tracking data are being shared — a missing tab is expected, not an error.</p>
+          </div>
+        </section>
+
+        <!-- ================= LOCATIONS ================= -->
+        <section class="section" id="locations">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">10</span> Fleet &amp; shipments</div>
+            <h2>My Locations</h2>
+            <p class="intro">Locations are reusable, geofenced points — your warehouses, depots, customer sites and so on. Once saved, they power features like arrival detection and proximity alerts across the platform.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/locations</div></div>
+              <div class="browserframe__img"><img src="assets/screens/locations-list.png" alt="The My Locations list with Add New Location, search, list/map toggle, Import CSV and a row highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Add New Location</strong> — opens the creation form.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search</strong> — filter by reference ID or name.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>List / Map toggle</strong> — view your points as a table or on a map.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Import CSV</strong> — bulk-add many locations at once.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Row actions</strong> — open the ⋮ menu on a row to Edit or Delete that location.</span></li>
+            </ul>
+          </div>
+
+          <h3>Adding or editing a location</h3>
+          <ol class="steps reveal">
+            <li><strong>Open the form</strong> with <em>Add New Location</em> (or <em>Edit location</em> from a row's ⋮ menu).</li>
+            <li><strong>Identify it</strong> — give it a unique Reference ID and a friendly Name.</li>
+            <li><strong>Place it</strong> — enter the Latitude and Longitude. The preview map on the right updates live as you type.</li>
+            <li><strong>Add an address (optional)</strong> — street, postcode, city and country for human-readable context.</li>
+            <li><strong>Set the radii</strong> — the Geofence radius defines the location's boundary; the Asset-proximity radius defines when a vehicle counts as “at” the location.</li>
+            <li><strong>Save</strong> with <em>Add Location</em> (or <em>Update Location</em>).</li>
+          </ol>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/locations · Add New Location</div></div>
+              <div class="browserframe__img"><img src="assets/screens/location-add-modal.png" alt="The Add New Location dialog with fields numbered and a live preview map on the right." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Reference ID &amp; Name</strong> — both required; the reference must be unique.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Coordinates</strong> — latitude and longitude.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Address</strong> — optional, with a searchable country picker.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Radii</strong> — geofence and asset-proximity, in metres.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Live preview</strong> — confirms the pin and circles before you save.</span></li>
+              <li><span class="b">6</span><span class="tx"><strong>Add Location</strong> — saves the point.</span></li>
+            </ul>
+          </div>
+
+          <h3>Map view</h3>
+          <p>Switch to <em>Map</em> to see all your locations at once, clustered by area, with a synced list grouped by country on the side.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/locations?view=map</div></div>
+              <div class="browserframe__img"><img src="assets/screens/locations-map.png" alt="The Locations map view with clustered markers near Berlin and a country-grouped list." loading="lazy" /></div>
+            </figure>
+          </div>
+          <div class="callout warn reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.6 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+            <p>Deleting a location is permanent — it can't be undone. You'll be asked to confirm first. Reference IDs must be unique within your company, so reusing one will be rejected.</p>
+          </div>
+        </section>
+
+        <!-- ================= CONSENTS ================= -->
+        <section class="section" id="consents">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">11</span> Network &amp; monitoring</div>
+            <h2>My Consents</h2>
+            <p class="intro">Consents are the heart of trust on CO3. This page is your complete, auditable record of who has granted you visibility — and what you have granted to others.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/consents</div></div>
+              <div class="browserframe__img"><img src="assets/screens/consents.png" alt="The My Consents page with Given/Received tabs, search and Type filter, and the consent table highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Given / Received tabs</strong> — switch between consents you've <em>given</em> to others and ones you've <em>received</em>.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search &amp; Type filter</strong> — find a partner by name, or narrow to specific consent types.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>The table</strong> — each row names the company, the consent type, and the date it was granted.</span></li>
+            </ul>
+          </div>
+
+          <h3>Consent types explained</h3>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Consent</th><th>What it allows</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Access to monitoring orders for specific assets</strong></td><td>Visibility of selected vehicles, only for the duration of agreed orders.</td></tr>
+                <tr><td><strong>Continuous trackability for specific assets</strong></td><td>Ongoing visibility of specific vehicles, beyond a single order.</td></tr>
+                <tr><td><strong>Full fleet visibility during active orders</strong></td><td>See the whole fleet, but only while orders are active.</td></tr>
+                <tr><td><strong>Full fleet visibility on permanent basis</strong></td><td>Continuous visibility of the entire fleet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p><strong>Two names for the same thing.</strong> Lists like <a href="#carriers">Carriers</a> and <a href="#templates">Email Templates</a> show short consent labels in chips (for example <em>Shipment tracking</em> or <em>Selective tour</em>), while this page spells out the full descriptive name. They describe the same underlying permissions — just in a compact vs. a detailed form.</p>
+          </div>
+
+          <h3>How consents are granted and changed</h3>
+          <p>You don't create consents directly on this page — it's the <em>record</em>. Consents come into existence through the invitation flow: when you invite a carrier and they accept, they grant the consent named in your invitation template. From then on it appears in your <em>Received</em> tab, and the matching relationship shows as <span class="pill green">Approved</span> on the Carriers page.</p>
+          <p>The invitation statuses you see on <a href="#carriers">Carriers</a> map directly to what happened to a consent request:</p>
+          <ul class="reveal">
+            <li><strong>Pending</strong> — you've asked; the partner hasn't decided yet.</li>
+            <li><strong>Approved</strong> — granted, and now listed here under <em>Received</em>.</li>
+            <li><strong>Rejected</strong> — the partner declined the request.</li>
+            <li><strong>Revoked</strong> — a previously granted access was later withdrawn. Revocation is recorded, so the history stays auditable.</li>
+            <li><strong>Expired / Cancelled</strong> — the request lapsed or was called off before acceptance — simply re-invite to ask again.</li>
+          </ul>
+          <p>To ask for more visibility from an existing partner, send a fresh invitation with a template that requests the broader consent type.</p>
+
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <p>Want to grow your network? The bottom of this page links straight to <a href="#invite-carrier">inviting a new company</a>.</p>
+          </div>
+        </section>
+
+        <!-- ================= SUBSCRIPTIONS ================= -->
+        <section class="section" id="subscriptions">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">12</span> Network &amp; monitoring</div>
+            <h2>Subscriptions</h2>
+            <p class="intro">Subscriptions let shippers turn on permanent monitoring for the vehicles that matter most, choosing exactly which data modules to receive — and keeping the billing for it all in one place.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/subscriptions</div></div>
+              <div class="browserframe__img"><img src="assets/screens/subscriptions.png" alt="The Subscriptions page with Manage/Activity/Billing tabs, filters and a table of monitored vehicles with module chips." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Manage / Activity / Billing</strong> — manage active subscriptions, review what changed, and see your billing.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Filters &amp; bulk actions</strong> — narrow by carrier or state, and apply changes to several vehicles at once.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Subscription rows</strong> — each vehicle with its state and the active data modules.</span></li>
+            </ul>
+          </div>
+
+          <h3>Data modules you can subscribe to</h3>
+          <div class="tags reveal">
+            <span class="tag">GPS position</span>
+            <span class="tag">ETA prediction</span>
+            <span class="tag">CO₂e emissions</span>
+            <span class="tag">Temperature</span>
+            <span class="tag">Tachograph</span>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>Subscriptions are a shipper feature. If you don't see <em>Subscriptions</em> in your sidebar, your account doesn't have a shipper role for the current company.</p>
+          </div>
+        </section>
+
+        <!-- ================= BRANDING ================= -->
+        <section class="section" id="branding">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">13</span> Invitation emails</div>
+            <h2>Invitation Branding</h2>
+            <p class="intro">Branding controls how your carrier-invitation emails look — your logo and colour palette — so partners instantly recognise that the invitation came from you. Open it from the Settings ⚙ menu.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/invitation-branding</div></div>
+              <div class="browserframe__img"><img src="assets/screens/branding-list.png" alt="The Invitation Branding list with New Branding, search/filter and the table of brandings highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>New Branding</strong> — create a new visual identity.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search &amp; status filter</strong> — find a version, or show only Active / Inactive / Archived ones.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>The table</strong> — each row shows the colour swatches, logo preview, CO3 logo variant, status and created date.</span></li>
+            </ul>
+          </div>
+
+          <h3>Brand statuses</h3>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><span class="pill green">Active</span></td><td>The branding currently used in your invitation emails. Only one can be active at a time.</td></tr>
+                <tr><td><span class="pill grey">Inactive</span></td><td>A saved branding that isn't currently in use — you can edit, activate or archive it.</td></tr>
+                <tr><td><span class="pill grey">Archived</span></td><td>Retired and read-only, kept for your records.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>The live preview editor</h3>
+          <p>Creating or editing a branding opens a two-pane editor: your settings on the left, a live email preview on the right that updates as you type. You set:</p>
+          <ul class="reveal">
+            <li><strong>Version name</strong> — a label so you can tell brandings apart.</li>
+            <li><strong>Logo URL</strong> — a link to your logo image.</li>
+            <li><strong>Colours</strong> — Primary (headings, buttons, body text), Background (the page behind the email) and Accent (highlights and links).</li>
+            <li><strong>CO3 logo variant</strong> — which version of the CO3 mark to pair with yours.</li>
+          </ul>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/invitation-branding · New Branding</div></div>
+              <div class="browserframe__img"><img src="assets/screens/branding-modal.png" alt="The branding editor with colour settings on the left and a live email preview on the right." loading="lazy" /></div>
+            </figure>
+            <p class="shot__caption">Switch the preview between the <em>Email</em> and <em>Registration Form</em> tabs to see your brand in both places carriers will encounter it.</p>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>The <em>Active</em> branding is locked because it's the one going out in your live invitation emails. To edit it, activate a different branding first — the old one becomes <em>Inactive</em> and editable.</p>
+          </div>
+        </section>
+
+        <!-- ================= TEMPLATES ================= -->
+        <section class="section" id="templates">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">14</span> Invitation emails</div>
+            <h2>Email Templates</h2>
+            <p class="intro">Where Branding sets the look, Templates set the words. Templates are the multilingual email content carriers receive when you invite them — and you choose which one to use each time you add a carrier. Open it from the Settings ⚙ menu.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/notification-templates</div></div>
+              <div class="browserframe__img"><img src="assets/screens/templates-list.png" alt="The Email Templates list with New Template, search/filter and the table of templates highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>New Template</strong> — create a new email template.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search &amp; filter</strong> — find by name or filter by state.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>The table</strong> — version name, language locales, linked branding, consent type, and state (<em>Default</em> / <em>Archived</em>).</span></li>
+            </ul>
+          </div>
+
+          <h3>Writing a template</h3>
+          <p>The editor mirrors the branding one: a form on the left, a live email preview on the right. You can:</p>
+          <ul class="reveal">
+            <li>Name the template and pick the <strong>consent type</strong> the carrier will be asked to accept.</li>
+            <li>Link a <strong>branding scheme</strong> so the preview (and the real email) uses your colours and logo.</li>
+            <li>Mark it as your company's <strong>default</strong>, so it's pre-selected whenever you add a carrier.</li>
+            <li>Add one or more <strong>language locales</strong> (e.g. EN, DE, PL) and write the greeting and paragraphs for each. Placeholders like <code>{{invitedCompanyName}}</code> are filled in automatically per recipient.</li>
+          </ul>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/notification-templates · New Template</div></div>
+              <div class="browserframe__img"><img src="assets/screens/template-modal.png" alt="The email template editor with content fields on the left and a live email preview on the right." loading="lazy" /></div>
+            </figure>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>Add multiple locales to a single template and CO3 uses the version matching the carrier's language where available (falling back to your default) — no need to maintain separate templates per country.</p>
+          </div>
+        </section>
+
+        <!-- ================= TIPS ================= -->
+        <section class="section" id="tips">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">★</span> Help</div>
+            <h2>Tips &amp; shortcuts</h2>
+            <p class="intro">A handful of habits that make the portal faster to use every day.</p>
+          </div>
+          <h3>Handy habits</h3>
+          <div class="cardgrid reveal">
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M8 13h8"/></svg></div>
+              <h4>Remember filters</h4>
+              <p>Tick this on any list and your search and filters are restored next visit.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+              <h4>Configure columns</h4>
+              <p>Use the columns button to hide data you don't need and focus the table.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></div>
+              <h4>Export to CSV</h4>
+              <p>Most lists can export — great for reports or sharing with colleagues.</p>
+            </div>
+            <div class="fcard">
+              <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></div>
+              <h4>Pick your theme</h4>
+              <p>Switch between light and dark whenever your environment changes.</p>
+            </div>
+          </div>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Where</th><th>Shortcut / habit</th></tr></thead>
+              <tbody>
+                <tr><td>This handbook</td><td>Press <span class="kbd">⌘K</span> / <span class="kbd">Ctrl K</span> (or <span class="kbd">/</span>) to search.</td></tr>
+                <tr><td>Any list</td><td>Sort by clicking a column header (where the sort arrows appear).</td></tr>
+                <tr><td>Country / option pickers</td><td>Start typing to filter long lists instead of scrolling.</td></tr>
+                <tr><td>Sidebar</td><td>On desktop, <em>Collapse</em> widens your workspace; on phones the sidebar tucks behind the ☰ menu button.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="section" id="faq">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">?</span> Help</div>
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div class="faq reveal">
+            <details>
+              <summary>Why can't I see Subscriptions (or some other item) in my sidebar?</summary>
+              <div class="a"><p>The sidebar adapts to your role and company. Some features — such as Subscriptions — are only available to shippers. Switch to the right company in the top-left, or ask your administrator if you believe you should have access.</p></div>
+            </details>
+            <details>
+              <summary>A carrier says they didn't get my invitation. What can I do?</summary>
+              <div class="a"><p>Open the carrier's <em>Notification history</em> from its row ⋮ menu to confirm the email was sent and to which address. If the address was wrong, you can add the carrier again with the correct one. You can also use <em>Send invite</em> to resend.</p></div>
+            </details>
+            <details>
+              <summary>Why is a vehicle missing a tab, like Map or Drive &amp; rest?</summary>
+              <div class="a"><p>The data shown for each vehicle depends on what its carrier consented to share and what the vehicle's hardware reports. If that data isn't available, the relevant tab or value simply won't appear.</p></div>
+            </details>
+            <details>
+              <summary>I can't edit my Active branding. Is that a bug?</summary>
+              <div class="a"><p>No — it's intentional. The Active branding is the one being used in live invitation emails, so it's locked. Activate a different branding first, then the previous one becomes Inactive and editable.</p></div>
+            </details>
+            <details>
+              <summary>What's the difference between Branding and Email Templates?</summary>
+              <div class="a"><p><strong>Branding</strong> is the <em>look</em> (logo, colours). <strong>Templates</strong> are the <em>words</em> (greeting, paragraphs, language). A template can link to a branding so the email is both well-written and on-brand.</p></div>
+            </details>
+            <details>
+              <summary>Is my data shared automatically with anyone?</summary>
+              <div class="a"><p>No. Visibility only exists where an explicit consent has been granted. The <a href="#consents">My Consents</a> page is your complete record of every access given and received.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ================= GLOSSARY ================= -->
+        <section class="section" id="glossary">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">A–Z</span> Help</div>
+            <h2>Glossary</h2>
+            <p class="intro">The words you'll meet most often around the portal.</p>
+          </div>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <tbody>
+                <tr><td><strong>Shipper</strong></td><td>A company that sends goods and wants visibility of how they're transported.</td></tr>
+                <tr><td><strong>Carrier</strong></td><td>A company that transports goods and shares vehicle visibility with its partners.</td></tr>
+                <tr><td><strong>Consent</strong></td><td>An explicit, auditable permission to share specific visibility between two companies.</td></tr>
+                <tr><td><strong>Asset</strong></td><td>A connected vehicle — truck, trailer or van — visible to you because of a consent.</td></tr>
+                <tr><td><strong>Tracking</strong></td><td>A transport order: a shipment moving between stops, which you can follow on a map.</td></tr>
+                <tr><td><strong>Geofence</strong></td><td>A circular boundary around a saved location used to detect arrivals and proximity.</td></tr>
+                <tr><td><strong>Tachograph</strong></td><td>The device that records a driver's driving and rest times; powers the Drive &amp; rest view.</td></tr>
+                <tr><td><strong>Next / Daily drive</strong></td><td>Drive &amp; rest gauges — how long a vehicle can legally keep driving now, and how much of today's permitted driving time remains.</td></tr>
+                <tr><td><strong>Telemetry</strong></td><td>Live measurements from a vehicle — speed, fuel, temperature, mileage, ignition.</td></tr>
+                <tr><td><strong>Invitation template</strong></td><td>The reusable, multilingual email content sent when you invite a carrier.</td></tr>
+                <tr><td><strong>Branding</strong></td><td>The logo and colour palette applied to your invitation emails and registration page.</td></tr>
+                <tr><td><strong>Subscription</strong></td><td>Permanent monitoring of a vehicle with chosen data modules (a shipper feature).</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="foot reveal">
+          <div class="foot__row">
+            <div>© 2026 CO3 · CO3 Customer Portal — User Handbook</div>
+            <div>
+              <a href="#welcome">Back to top</a> ·
+              <a href="https://www.co3.io/terms-and-conditions" target="_blank" rel="noopener">Terms</a> ·
+              <a href="https://www.co3.io/privacy-policy" target="_blank" rel="noopener">Privacy</a>
+            </div>
+          </div>
+          <p style="margin-top:10px;font-size:13px;color:var(--muted)">Screens captured live from the CO3 Customer Portal. Some data is illustrative. Layouts and labels may evolve as the product is improved.</p>
+        </footer>
+
+      </div><!-- /.content -->
+    </main>
+  </div><!-- /.shell -->
+
+  <!-- Back to top -->
+  <button id="totop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 14 6-6 6 6"/></svg>
+  </button>
+
+  <!-- Command palette -->
+  <div class="palette-backdrop" id="palette" aria-hidden="true">
+    <div class="palette" role="dialog" aria-label="Search the handbook">
+      <div class="palette__in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input id="palette-input" type="text" placeholder="Search features, buttons, tasks…" autocomplete="off" spellcheck="false" />
+        <span class="kbd">Esc</span>
+      </div>
+      <div class="palette__results" id="palette-results"></div>
+      <div class="palette__foot">
+        <span><span class="kbd">↑</span><span class="kbd">↓</span> navigate</span>
+        <span><span class="kbd">↵</span> open</span>
+        <span><span class="kbd">esc</span> close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close preview">×</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox__cap" id="lightbox-cap"></div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
