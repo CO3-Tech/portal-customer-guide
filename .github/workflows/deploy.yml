@@ -5,10 +5,10 @@ name: Deploy handbook to share.co3.io
 # prunes stale remote files (a clean mirror) — the URL stays stable and
 # structural changes / renames leave no leftovers.
 #
-# Setup: add a repository SECRET named SHARE_API_KEY
-#   (Settings ▸ Secrets and variables ▸ Actions ▸ Secrets ▸ New repository secret).
-# The target project id lives in SHARE_PROJECT below; override it with a repo
-# VARIABLE of the same name if the project ever changes.
+# Setup: add two repository SECRETS (Settings ▸ Secrets and variables ▸ Actions
+#   ▸ Secrets ▸ New repository secret):
+#     SHARE_API_KEY     — the write key
+#     SHARE_PROJECT_ID  — the target share.co3.io project id
 
 on:
   push:
@@ -36,17 +36,19 @@ jobs:
       # Prefer a Secret (masked). vars.* is a fallback only — don't store the
       # key as a plaintext variable; it has write + delete privileges.
       SHARE_API_KEY: ${{ secrets.SHARE_API_KEY || vars.SHARE_API_KEY }}
-      SHARE_PROJECT: ${{ vars.SHARE_PROJECT || '01KWE6PKH5CFSYJR5DMYZBK7P5' }}
+      # Target project id — now stored as a repo secret (its value changed and
+      # is no longer hardcoded here).
+      SHARE_PROJECT_ID: ${{ secrets.SHARE_PROJECT_ID }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Publish to share.co3.io
-        if: ${{ env.SHARE_API_KEY != '' }}
+        if: ${{ env.SHARE_API_KEY != '' && env.SHARE_PROJECT_ID != '' }}
         run: |
           chmod +x scripts/share-deploy.sh
           scripts/share-deploy.sh .
 
-      - name: No API key — skip
-        if: ${{ env.SHARE_API_KEY == '' }}
+      - name: Missing secrets — skip
+        if: ${{ env.SHARE_API_KEY == '' || env.SHARE_PROJECT_ID == '' }}
         run: |
-          echo "::warning::SHARE_API_KEY is not set. Add it under Settings ▸ Secrets and variables ▸ Actions ▸ Secrets, then re-run this workflow."
+          echo "::warning::SHARE_API_KEY and/or SHARE_PROJECT_ID secret is not set — deploy skipped. Add both under Settings ▸ Secrets and variables ▸ Actions ▸ Secrets, then re-run this workflow."

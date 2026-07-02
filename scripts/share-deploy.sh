@@ -19,11 +19,12 @@
 #   scripts/share-deploy.sh --dry-run                     # preview, no changes
 #   scripts/share-deploy.sh --no-prune [dir]              # upload only, keep stale
 #
-# Env:  SHARE_PROJECT   destination project (default: portal-customer-guide)
+# Env:  SHARE_PROJECT_ID  destination project id (preferred; falls back to
+#       SHARE_PROJECT, then to "portal-customer-guide")
 # Exit: 0 ok · 1 no key · 2 bad dir · 3 upload failed · 4 prune failed
 set -euo pipefail
 
-PROJECT="${SHARE_PROJECT:-portal-customer-guide}"
+PROJECT="${SHARE_PROJECT_ID:-${SHARE_PROJECT:-portal-customer-guide}}"
 BASE_URL="https://share.co3.io"
 SRC="."
 DRY_RUN=0

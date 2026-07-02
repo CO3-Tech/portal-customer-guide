@@ -38,15 +38,14 @@ that no longer exists locally is pruned. Same-named images are replaced and
 renamed/removed/moved files leave no stale leftovers, while the live URL stays
 stable and is never emptied mid-deploy. Pass `--no-prune` to upload without pruning.
 
-**One-time setup:** add a repository **secret** `SHARE_API_KEY`
-(*Settings ▸ Secrets and variables ▸ Actions ▸ Secrets ▸ New repository secret*).
-The target project id is set in the workflow (`SHARE_PROJECT`); override it with a
-repo **variable** of the same name if it ever changes.
+**One-time setup:** add two repository **secrets** (*Settings ▸ Secrets and
+variables ▸ Actions ▸ Secrets ▸ New repository secret*): `SHARE_API_KEY` (the
+write key) and `SHARE_PROJECT_ID` (the target share.co3.io project id).
 
 **Manual / local deploy:**
 
 ```bash
-SHARE_API_KEY=<key> SHARE_PROJECT=<project-id> bash scripts/share-deploy.sh .
+SHARE_API_KEY=<key> SHARE_PROJECT_ID=<project-id> bash scripts/share-deploy.sh .
 bash scripts/share-deploy.sh --dry-run   # preview file list, no upload
 ```
 
