@@ -1,0 +1,6 @@
+# QA audit artifacts from the portal-guide-audit / portal-guide-document skills
+# (coverage manifest, gap report, FE review, and working portal screenshots).
+# QA-internal — never commit or deploy them: the share.co3.io deploy is a clean
+# mirror of the repo, so anything committed here gets published.
+audit/
+.DS_Store

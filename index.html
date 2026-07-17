@@ -212,18 +212,16 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io</div></div>
-              <div class="browserframe__img"><img src="assets/screens/shell-anatomy.png" alt="The portal app shell with five highlighted areas: sidebar, company switcher, utility icons, account, theme toggle." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/shell-anatomy.png" alt="The portal app shell with five highlighted areas: sidebar, company switcher, settings gear, account, theme toggle." loading="lazy" /></div>
             </figure>
             <ul class="legend cols2">
-              <li><span class="b">1</span><span class="tx"><strong>Navigation sidebar</strong> — jump between Home, Carriers, Assets, Trackings, My Locations and more. On desktop, <em>Collapse</em> at the bottom widens your workspace; on phones and tablets the sidebar tucks behind the ☰ menu button.</span></li>
+              <li><span class="b">1</span><span class="tx"><strong>Navigation sidebar</strong> — jump between Home, Carriers, Assets, Subscriptions, Trackings, My Locations and My Consents. On desktop, <em>Collapse</em> at the bottom widens your workspace; on phones and tablets the sidebar tucks behind the ☰ menu button.</span></li>
               <li><span class="b">2</span><span class="tx"><strong>Company switcher</strong> — shows and changes the company you're acting for.</span></li>
-              <li><span class="b">3</span><span class="tx"><strong>Messages, Notifications &amp; Settings ⚙</strong> — the gear opens <em>Invitation Branding</em> and <em>Email Templates</em>.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Settings ⚙</strong> — the gear opens <em>Invitation Branding</em> and <em>Email Templates</em>.</span></li>
               <li><span class="b">4</span><span class="tx"><strong>Your account</strong> — your name and how you signed in.</span></li>
               <li><span class="b">5</span><span class="tx"><strong>Light / Dark theme</strong> — switch the look to suit your screen and lighting.</span></li>
             </ul>
           </div>
-
-          <p>Two of the header icons open quick panels: <strong>Messages</strong> (the envelope) and <strong>Notifications</strong> (the bell). They gather updates relevant to you — when there's nothing new, they simply open an empty panel.</p>
 
           <h3>The Settings ⚙ menu</h3>
           <p>Two important features live behind the gear icon rather than in the sidebar, because they are set-up tasks you do occasionally rather than every day.</p>
@@ -315,7 +313,7 @@
               <li><span class="b">1</span><span class="tx"><strong>Add carrier</strong> — opens the invitation form. <a href="#invite-carrier">Walkthrough below →</a></span></li>
               <li><span class="b">2</span><span class="tx"><strong>Status summary</strong> — how many partners are Approved, Pending or Inactive.</span></li>
               <li><span class="b">3</span><span class="tx"><strong>Search</strong> — find a carrier by company name or tax number.</span></li>
-              <li><span class="b">4</span><span class="tx"><strong>Filters</strong> — narrow by Invitation status and CO3 platform status.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Filters</strong> — narrow by Invitation status and CO3 status.</span></li>
               <li><span class="b">5</span><span class="tx"><strong>Toolbar</strong> — Import a CSV of carriers, Export the list, or Configure which columns are visible.</span></li>
             </ul>
           </div>
@@ -603,18 +601,19 @@
           <p class="reveal">Each row shows the order number, licence plate, last known location, carrier, and the planned <em>From</em> → <em>To</em> stops with their time windows.</p>
 
           <h3>Following a shipment</h3>
-          <p>Opening an order shows everything about that journey on one screen.</p>
+          <p>Opening an order shows everything about that journey on one screen. It opens on the <strong>Overview</strong> tab; a second <strong>Analysis</strong> tab breaks the journey down leg by leg (see below).</p>
           <div class="shot reveal">
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/ORDER-…</div></div>
-              <div class="browserframe__img"><img src="assets/screens/tracking-detail.png" alt="A tracking detail page with header, summary, route map and the Stops/CO2 details panel highlighted." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-detail.png" alt="A tracking detail page on the Overview tab: header with Overview/Analysis tabs, summary, timeline, a details panel and the route map highlighted." loading="lazy" /></div>
             </figure>
             <ul class="legend cols2">
-              <li><span class="b">1</span><span class="tx"><strong>Header</strong> — the route (origin → destination), the shipper and carrier, and the live status (e.g. <em>Ongoing</em>).</span></li>
-              <li><span class="b">2</span><span class="tx"><strong>Summary</strong> — tracking duration, next stop, and how many assets and stops are involved.</span></li>
-              <li><span class="b">3</span><span class="tx"><strong>Route map</strong> — the planned path with numbered stop markers.</span></li>
-              <li><span class="b">4</span><span class="tx"><strong>Details</strong> — switch between <em>Stops</em> (each pickup/delivery with address, coordinates and planned times) and <em>CO₂</em> emissions.</span></li>
+              <li><span class="b">1</span><span class="tx"><strong>Header</strong> — the route (origin → destination), the shipper and carrier, the live status (e.g. <em>Ongoing</em>), and the <strong>Overview / Analysis</strong> tabs.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Summary</strong> — tracking duration, next stop, and the Legs / Assets / Stops counts, alongside <em>Assets on this trip</em>.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Timeline</strong> — a playback control (play/pause, 0.5×–4× speed and a scrubber) to replay the journey over time.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Details</strong> — a tabbed panel: <em>Stops</em>, <em>Legs</em>, <em>CO₂</em> and <em>Events</em>. Each stop shows its address, coordinates (with a copy icon) and planned times.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Map</strong> — the route with numbered stop markers; toggle the <em>Trace</em>, <em>Events</em> and <em>Planned stops</em> layers.</span></li>
             </ul>
           </div>
           <div class="callout tip reveal">
@@ -624,6 +623,22 @@
           <div class="callout note reveal">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
             <p>What you can open here depends on your role and on the data available for an order. For example, the <strong>CO₂</strong> tab and the live position only appear when emissions and tracking data are being shared — a missing tab is expected, not an error.</p>
+          </div>
+
+          <h3>Leg-by-leg analysis</h3>
+          <p>The <strong>Analysis</strong> tab breaks a multi-leg tour into individual legs — each with the route actually driven and the numbers behind it.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/ORDER-… · Analysis</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-analysis.png" alt="The Analysis tab of a tracking: a leg selector, the driven route on a leg map, a leg metrics panel, and telemetry charts." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Leg selector</strong> — step through each leg of the tour with the ‹ › arrows.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Leg map</strong> — the actual GPS trace driven, with planned stops marked <em>Matched</em>, <em>Visited</em> or <em>Missed</em>.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Leg metrics</strong> — the power and cargo unit, start and end (time + coordinates), distance, fuel consumption and visited stops.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Advanced data</strong> — telemetry charts for the leg: speed, fuel level, mileage, temperature and ignition.</span></li>
+            </ul>
           </div>
         </section>
 
@@ -816,7 +831,7 @@
           </div>
 
           <h3>The live preview editor</h3>
-          <p>Creating or editing a branding opens a two-pane editor: your settings on the left, a live email preview on the right that updates as you type. You set:</p>
+          <p>Creating or editing a branding opens a two-pane editor: your settings on the left, a live preview on the right that updates as you type — toggle it between the <strong>Email</strong> and <strong>Registration Form</strong> previews to see both surfaces your branding affects. You set:</p>
           <ul class="reveal">
             <li><strong>Version name</strong> — a label so you can tell brandings apart.</li>
             <li><strong>Logo URL</strong> — a link to your logo image.</li>
@@ -827,7 +842,7 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/invitation-branding · New Branding</div></div>
-              <div class="browserframe__img"><img src="assets/screens/branding-modal.png" alt="The branding editor with colour settings on the left and a live email preview on the right." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/branding-modal.png" alt="The branding editor with colour settings on the left and a live preview (Email / Registration Form) on the right." loading="lazy" /></div>
             </figure>
             <p class="shot__caption">Switch the preview between the <em>Email</em> and <em>Registration Form</em> tabs to see your brand in both places carriers will encounter it.</p>
           </div>
@@ -842,7 +857,7 @@
           <div class="section__head reveal">
             <div class="section__kicker"><span class="num">14</span> Invitation emails</div>
             <h2>Email Templates</h2>
-            <p class="intro">Where Branding sets the look, Templates set the words. Templates are the multilingual email content carriers receive when you invite them — and you choose which one to use each time you add a carrier. Open it from the Settings ⚙ menu.</p>
+            <p class="intro">Where Branding sets the look, Templates set the words. Templates are the multilingual email content carriers receive when you invite them — and you choose which one to use each time you add a carrier. Open it from the Settings ⚙ menu — the page header itself reads <em>Email Notification Templates</em>.</p>
           </div>
 
           <div class="shot reveal">
