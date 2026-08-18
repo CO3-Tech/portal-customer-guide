@@ -15,7 +15,7 @@
 
   <!-- Mobile top bar -->
   <header class="mobilebar">
-    <button class="iconbtn js-menu" aria-label="Open menu">
+    <button class="iconbtn js-menu" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <span class="logo-mark" role="img" aria-label="CO3"></span>
@@ -31,7 +31,7 @@
 
   <div class="shell">
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar__brand">
         <span class="logo-mark" role="img" aria-label="CO3"></span>
         <div>
@@ -62,6 +62,7 @@
         <a class="nav-link" data-target="assets" href="#assets"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10v8H3zM13 11h5l3 3v2h-8z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Assets</a>
         <a class="nav-link" data-target="trackings" href="#trackings"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19c4 0 4-6 8-6s4 6 8 6"/><circle cx="4" cy="19" r="1.6"/><circle cx="20" cy="19" r="1.6"/><path d="M12 13V5"/></svg>Trackings</a>
         <a class="nav-link" data-target="locations" href="#locations"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>My Locations</a>
+        <a class="nav-link" data-target="assets-at-locations" href="#assets-at-locations"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/><path d="M7 10h5v4H7zM12 11h2l2 2v1h-4z"/><circle cx="9" cy="15" r="0.9"/><circle cx="14.6" cy="15" r="0.9"/></svg>Assets at locations</a>
 
         <div class="nav-group-label">Network &amp; monitoring</div>
         <a class="nav-link" data-target="consents" href="#consents"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>My Consents</a>
@@ -326,7 +327,7 @@
               <tbody>
                 <tr><td><strong>Company</strong></td><td>The carrier's name, tax number and the contact email the invitation was sent to.</td></tr>
                 <tr><td><strong>Invitation Status</strong></td><td>Where the invitation stands — see the status guide below.</td></tr>
-                <tr><td><strong>CO3 Platform</strong></td><td>Whether that company is already <em>Connected</em> on CO3, <em>Invited</em>, or <em>Not on CO3</em> yet.</td></tr>
+                <tr><td><strong>CO3 Platform</strong></td><td>Whether that company is already <em>Connected</em> on CO3, <em>Registered</em> (they have a CO3 account, but your link to them isn't live), <em>Invited</em>, or <em>Not on CO3</em> yet.</td></tr>
                 <tr><td><strong>Consent types</strong></td><td>The kinds of visibility the carrier has granted (e.g. Shipment tracking, Selective tour, Permanent monitoring).</td></tr>
                 <tr><td><strong>Connected</strong></td><td>The date the relationship was established.</td></tr>
               </tbody>
@@ -590,15 +591,17 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings</div></div>
-              <div class="browserframe__img"><img src="assets/screens/trackings-list.png" alt="The Trackings list with text search, status/type/date filters and the order table highlighted." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/trackings-list.png" alt="The Trackings list with the scheduled, ongoing and completed counters, the search and filter row, the column and filter-memory controls, and the order table highlighted." loading="lazy" /></div>
             </figure>
-            <ul class="legend">
-              <li><span class="b">1</span><span class="tx"><strong>Search</strong> — by order number, licence plate or carrier.</span></li>
-              <li><span class="b">2</span><span class="tx"><strong>Filters</strong> — by status, transport type, and an “active between” date range.</span></li>
-              <li><span class="b">3</span><span class="tx"><strong>Open an order</strong> — click any row to open the tracking detail.</span></li>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Counters</strong> — how many transports are scheduled, how many are moving right now, and how many finished in the last 30 days.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search &amp; filters</strong> — find by order number, licence plate or carrier, then narrow by status, transport type and an “active between” date range.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Show / hide columns</strong> — choose which columns the table shows.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Remember filters</strong> — tick it and the portal brings your filters back the next time you open the page.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>The table</strong> — one row per transport order. Scroll it sideways to reach the last columns, and click any row to open that order.</span></li>
             </ul>
           </div>
-          <p class="reveal">Each row shows the order number, licence plate, last known location, carrier, and the planned <em>From</em> → <em>To</em> stops with their time windows.</p>
+          <p class="reveal">Each row shows the order number, licence plate, last known position, carrier, the planned <em>From</em> → <em>To</em> stops with their time windows, when the order was created, and its current status.</p>
 
           <h3>Following a shipment</h3>
           <p>Opening an order shows everything about that journey on one screen. It opens on the <strong>Overview</strong> tab; a second <strong>Analysis</strong> tab breaks the journey down leg by leg (see below).</p>
@@ -612,7 +615,7 @@
               <li><span class="b">1</span><span class="tx"><strong>Header</strong> — the route (origin → destination), the shipper and carrier, the live status (e.g. <em>Ongoing</em>), and the <strong>Overview / Analysis</strong> tabs.</span></li>
               <li><span class="b">2</span><span class="tx"><strong>Summary</strong> — tracking duration, next stop, and the Legs / Assets / Stops counts, alongside <em>Assets on this trip</em>.</span></li>
               <li><span class="b">3</span><span class="tx"><strong>Timeline</strong> — a playback control (play/pause, 0.5×–4× speed and a scrubber) to replay the journey over time.</span></li>
-              <li><span class="b">4</span><span class="tx"><strong>Details</strong> — a tabbed panel: <em>Stops</em>, <em>Legs</em>, <em>CO₂</em> and <em>Events</em>. Each stop shows its address, coordinates (with a copy icon) and planned times.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Details</strong> — a tabbed panel: <em>Stops</em>, <em>Legs</em>, <em>CO₂</em> and <em>Events</em>. Each stop shows what kind of stop it is, its address, coordinates (with a copy icon) and its planned and actual times.</span></li>
               <li><span class="b">5</span><span class="tx"><strong>Map</strong> — the route with numbered stop markers; toggle the <em>Trace</em>, <em>Events</em> and <em>Planned stops</em> layers.</span></li>
             </ul>
           </div>
@@ -623,6 +626,25 @@
           <div class="callout note reveal">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
             <p>What you can open here depends on your role and on the data available for an order. For example, the <strong>CO₂</strong> tab and the live position only appear when emissions and tracking data are being shared — a missing tab is expected, not an error.</p>
+          </div>
+
+          <h3>Stop kinds and behaviour labels</h3>
+          <p>Every stop in the <em>Stops</em> list is titled with the kind of stop it is. A collection or a drop shows as <strong>Pickup</strong> or <strong>Delivery</strong>; any other stop shows the behaviour labels saved on that location — on their own, or combined with the stop's role, like <em>Waypoint · Handover</em>.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/ORDER-… · Stops</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-stop-labels.png" alt="The Stops list of a tracking, with the Stops tab, a plain Waypoint stop and a Waypoint and Handover stop highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Details tabs</strong> — the panels available for this journey. Which ones you see depends on the data the order carries.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Stop kind</strong> — a plain <em>Waypoint</em>: the vehicle passes through and no work is done there.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Combined labels</strong> — a stop can carry more than one label, joined with a “·” — here <em>Waypoint · Handover</em>. Below the title, the reference and address tell you which of your saved locations it is.</span></li>
+            </ul>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>These labels come from your saved locations — see <a href="#behaviour-labels">Behaviour labels</a> under My Locations. Editing a location's labels changes how <em>future</em> orders stopping there are treated.</p>
           </div>
 
           <h3>Leg-by-leg analysis</h3>
@@ -640,6 +662,57 @@
               <li><span class="b">4</span><span class="tx"><strong>Advanced data</strong> — telemetry charts for the leg: speed, fuel level, mileage, temperature and ignition.</span></li>
             </ul>
           </div>
+
+          <h3>Sharing a tracking outside CO3</h3>
+          <p>Sometimes the person who needs to know where a shipment is doesn't have a CO3 account — a customer, a warehouse foreman, a colleague in another department. For those cases you can hand out a <strong>public link</strong>: a read-only page for that one shipment that opens without any login.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-share-menu.png" alt="The Trackings list with a row&#x27;s actions menu open, showing the Generate public link action." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Row actions</strong> — open the ⋮ menu on any tracking in the list.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Generate public link</strong> — creates the link — or fetches the one this tracking already has — and opens the dialog below.</span></li>
+            </ul>
+          </div>
+          <p>The same dialog opens from the <strong>Share public link</strong> button in the header of a tracking's detail page, so you can share a shipment while you're looking at it.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings · Public tracking link</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-public-link-dialog.png" alt="The Public tracking link dialog showing the read-only link field, the Copy button, the expiry date and the exposure note." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>The link</strong> — shown in full and read-only — select it to copy by hand if you'd rather not use the button.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Copy</strong> — puts it on your clipboard and confirms with a short message.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Expiry &amp; exposure</strong> — the date the link stops working, and a reminder that anyone holding it can open the page without logging in.</span></li>
+            </ul>
+          </div>
+          <div class="callout warn reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+            <p>A public link needs <strong>no login</strong>, so treat it like a password. Anyone you send it to — and anyone <em>they</em> forward it to — can open the page until it expires. Share it only with people who should see that shipment.</p>
+          </div>
+          <p>Opening the same tracking's dialog again returns the <em>same</em> link rather than making a new one, so re-sending it to someone is safe.</p>
+          <h3>What the recipient sees</h3>
+          <p>The link opens a stripped-down page with just that shipment on it — no sidebar, no other orders, and nothing they can change.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/public/trackings/details/…</div></div>
+              <div class="browserframe__img"><img src="assets/screens/tracking-public-page.png" alt="The public tracking page seen without logging in: a read-only marker, the shipment status card, the expiry banner, and the timeline and route map." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Read-only marker</strong> — the page says plainly that this is a shared, read-only view.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Shipment status</strong> — the tour name, your order reference, the current status and the estimated arrival.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>How long it lasts</strong> — the same expiry date the dialog showed you.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Timeline &amp; route</strong> — the same playback control and route map you see in the portal — without the portal around it.</span></li>
+            </ul>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>The action is only offered for trackings that started within the last <strong>60 days</strong>. On an older one the ⋮ menu leaves the action out, and the detail-page button is greyed out with a tooltip explaining the 60-day window.</p>
+          </div>
         </section>
 
         <!-- ================= LOCATIONS ================= -->
@@ -654,23 +727,25 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/locations</div></div>
-              <div class="browserframe__img"><img src="assets/screens/locations-list.png" alt="The My Locations list with Add New Location, search, list/map toggle, Import CSV and a row highlighted." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/locations-list.png" alt="The My Locations list with Add New Location, search, list/map toggle, CSV import and export, the Behaviour column and a row's actions highlighted." loading="lazy" /></div>
             </figure>
             <ul class="legend cols2">
               <li><span class="b">1</span><span class="tx"><strong>Add New Location</strong> — opens the creation form.</span></li>
               <li><span class="b">2</span><span class="tx"><strong>Search</strong> — filter by reference ID or name.</span></li>
               <li><span class="b">3</span><span class="tx"><strong>List / Map toggle</strong> — view your points as a table or on a map.</span></li>
-              <li><span class="b">4</span><span class="tx"><strong>Import CSV</strong> — bulk-add many locations at once.</span></li>
-              <li><span class="b">5</span><span class="tx"><strong>Row actions</strong> — open the ⋮ menu on a row to Edit or Delete that location.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Import / Export CSV</strong> — add or update many locations from a file, or download the ones you already have.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Behaviour</strong> — the kind of stop each location is. An ordinary operational stop shows no badge.</span></li>
+              <li><span class="b">6</span><span class="tx"><strong>Row actions</strong> — open the ⋮ menu on a row to Edit or Delete that location.</span></li>
             </ul>
           </div>
 
           <h3>Adding or editing a location</h3>
           <ol class="steps reveal">
             <li><strong>Open the form</strong> with <em>Add New Location</em> (or <em>Edit location</em> from a row's ⋮ menu).</li>
-            <li><strong>Identify it</strong> — give it a unique Reference ID and a friendly Name.</li>
+            <li><strong>Identify it</strong> — give it a friendly Name and at least one Reference ID. Use <em>+ Add code</em> when several of your own codes mean the same place — the first code is the primary one, used in reports.</li>
             <li><strong>Place it</strong> — enter the Latitude and Longitude. The preview map on the right updates live as you type.</li>
             <li><strong>Add an address (optional)</strong> — street, postcode, city and country for human-readable context.</li>
+            <li><strong>Choose its behaviour labels</strong> — tell CO3 what kind of stop this is — see <a href="#behaviour-labels">Behaviour labels</a> below.</li>
             <li><strong>Set the radii</strong> — the Geofence radius defines the location's boundary; the Asset-proximity radius defines when a vehicle counts as “at” the location.</li>
             <li><strong>Save</strong> with <em>Add Location</em> (or <em>Update Location</em>).</li>
           </ol>
@@ -679,16 +754,39 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/locations · Add New Location</div></div>
-              <div class="browserframe__img"><img src="assets/screens/location-add-modal.png" alt="The Add New Location dialog with fields numbered and a live preview map on the right." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/location-add-modal.png" alt="The Add New Location dialog with the Reference IDs, Name, coordinates, address, behaviour labels, radii and live preview areas numbered." loading="lazy" /></div>
             </figure>
             <ul class="legend cols2">
-              <li><span class="b">1</span><span class="tx"><strong>Reference ID &amp; Name</strong> — both required; the reference must be unique.</span></li>
-              <li><span class="b">2</span><span class="tx"><strong>Coordinates</strong> — latitude and longitude.</span></li>
-              <li><span class="b">3</span><span class="tx"><strong>Address</strong> — optional, with a searchable country picker.</span></li>
-              <li><span class="b">4</span><span class="tx"><strong>Radii</strong> — geofence and asset-proximity, in metres.</span></li>
-              <li><span class="b">5</span><span class="tx"><strong>Live preview</strong> — confirms the pin and circles before you save.</span></li>
-              <li><span class="b">6</span><span class="tx"><strong>Add Location</strong> — saves the point.</span></li>
+              <li><span class="b">1</span><span class="tx"><strong>Reference IDs</strong> — one or more of your own codes for this place. The first is the primary code; <em>+ Add code</em> adds another, and each extra code can either <em>Inherit</em> the location's behaviour labels or <em>Override</em> them.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Name</strong> — a friendly label for the place.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Coordinates</strong> — latitude and longitude.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Address</strong> — optional, with a searchable country picker.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>Behaviour labels</strong> — what kind of stop this is — see the table below.</span></li>
+              <li><span class="b">6</span><span class="tx"><strong>Radii</strong> — geofence and asset-proximity, in metres.</span></li>
+              <li><span class="b">7</span><span class="tx"><strong>Live preview</strong> — confirms the pin, coordinates and radii before you save.</span></li>
             </ul>
+          </div>
+
+          <h3>Behaviour labels</h3>
+          <p>A behaviour label tells CO3 <strong>what kind of stop</strong> a location is, and that changes how an order stopping there is treated — the arrival times it predicts, the alerts it raises, and the distance it reports for the journey. A location can carry more than one label.</p>
+          <div class="tablewrap reveal">
+            <table class="t">
+              <thead><tr><th>Label</th><th>What it means</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Operational</strong></td><td>A real pickup or delivery. It counts towards ETA, alerting and distance. This is the default, and it shows <em>no badge</em> in the list.</td></tr>
+                <tr><td><span class="pill blue">Handover</span></td><td>A trailer or driver swap point.</td></tr>
+                <tr><td><span class="pill grey">Waypoint</span></td><td>A pass-through point — no work is done here.</td></tr>
+                <tr><td><span class="pill amber">Service</span></td><td>A fuel, wash, rest or maintenance stop.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>An empty <strong>Behaviour</strong> cell means the location is an ordinary <em>Operational</em> stop — it does <strong>not</strong> mean the information is missing.</p>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>You can apply labels to many locations at once with <em>Import CSV</em>. Afterwards the <strong>Behaviour</strong> column is the quickest way to check what the import actually applied, without opening each location.</p>
           </div>
 
           <h3>Map view</h3>
@@ -706,10 +804,69 @@
           </div>
         </section>
 
+        <!-- ================= ASSETS AT LOCATIONS ================= -->
+        <section class="section" id="assets-at-locations">
+          <div class="section__head reveal">
+            <div class="section__kicker"><span class="num">11</span> Fleet &amp; shipments</div>
+            <h2>Assets at locations</h2>
+            <p class="intro">This page answers an everyday dispatch question — which vehicles are at my sites right now? It pairs your saved locations with the assets your partners share with you and shows how many are at each one, either as a list you can expand or as pins on a map.</p>
+          </div>
+
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/nearby-assets</div></div>
+              <div class="browserframe__img"><img src="assets/screens/nearby-assets-list.png" alt="The Assets at locations list with the three counters, licence-plate search, Locations filter, list/map toggle and a location row highlighted." loading="lazy" /></div>
+            </figure>
+            <ul class="legend cols2">
+              <li><span class="b">1</span><span class="tx"><strong>Counters</strong> — how many assets are at your locations right now, how many locations have at least one, and how many are empty.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search by licence plate</strong> — jump straight to the location a particular vehicle is at.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Locations filter</strong> — narrow the page down to the sites you care about.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>List / Map toggle</strong> — switch between the expandable list and the map.</span></li>
+              <li><span class="b">5</span><span class="tx"><strong>A location row</strong> — the country flag, name, reference and address, with the number of assets and the radius used around that location on the right. A site with nothing nearby says so.</span></li>
+            </ul>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>You'll find <strong>Assets at locations</strong> in the sidebar underneath <em>Trackings</em> — it appears once Trackings is your current section.</p>
+          </div>
+          <h3>Seeing which assets are at a location</h3>
+          <p>Click a row to open it. The location expands into a table of the vehicles currently there, so you can go from “six vehicles are at my Łódź depot” to “which six, and since when” in one click.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/nearby-assets</div></div>
+              <div class="browserframe__img"><img src="assets/screens/nearby-assets-expanded.png" alt="An expanded location row listing six assets with their plate, type, arrival time, last-seen time and coordinates, and an empty location below it." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Location row</strong> — click it — or its arrow — to expand and collapse.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Assets at this location</strong> — each vehicle's licence plate and type, when it arrived, when it was last seen, and its coordinates.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>An empty location</strong> — no arrow and a plain <em>No assets nearby.</em> — you can tell at a glance there is nothing to open.</span></li>
+            </ul>
+          </div>
+          <div class="callout tip reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a7 7 0 0 0-4-12Z"/></svg></span>
+            <p>Whether a vehicle counts as being “at” a site depends on the radius saved with that location — see <a href="#adding-or-editing-a-location">Adding or editing a location</a> if the numbers here aren't what you expect.</p>
+          </div>
+          <h3>Assets on the map</h3>
+          <p>Switch to <em>Map</em> for the same information geographically — useful when you want to see where your loaded and empty sites are in relation to each other.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/trackings/nearby-assets?view=map</div></div>
+              <div class="browserframe__img"><img src="assets/screens/nearby-assets-map.png" alt="The map view of Assets at locations, with counted pins across Poland and the Locations panel listing every site beside it." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Counted pins</strong> — every pin carries the number of assets at that location; sites close together are grouped so the map stays readable.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Locations panel</strong> — the same list beside the map, each entry with its own count — scroll it to find a site without hunting on the map.</span></li>
+            </ul>
+          </div>
+        </section>
+
         <!-- ================= CONSENTS ================= -->
         <section class="section" id="consents">
           <div class="section__head reveal">
-            <div class="section__kicker"><span class="num">11</span> Network &amp; monitoring</div>
+            <div class="section__kicker"><span class="num">12</span> Network &amp; monitoring</div>
             <h2>My Consents</h2>
             <p class="intro">Consents are the heart of trust on CO3. This page is your complete, auditable record of who has granted you visibility — and what you have granted to others.</p>
           </div>
@@ -765,7 +922,7 @@
         <!-- ================= SUBSCRIPTIONS ================= -->
         <section class="section" id="subscriptions">
           <div class="section__head reveal">
-            <div class="section__kicker"><span class="num">12</span> Network &amp; monitoring</div>
+            <div class="section__kicker"><span class="num">13</span> Network &amp; monitoring</div>
             <h2>Subscriptions</h2>
             <p class="intro">Subscriptions let shippers turn on permanent monitoring for the vehicles that matter most, choosing exactly which data modules to receive — and keeping the billing for it all in one place.</p>
           </div>
@@ -774,20 +931,57 @@
             <figure class="browserframe">
               <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
                 <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/subscriptions</div></div>
-              <div class="browserframe__img"><img src="assets/screens/subscriptions.png" alt="The Subscriptions page with Manage/Activity/Billing tabs, filters and a table of monitored vehicles with module chips." loading="lazy" /></div>
+              <div class="browserframe__img"><img src="assets/screens/subscriptions.png" alt="The Subscriptions Manage tab with the tab bar, the active and inactive counters, filters and bulk actions, and the table of monitored vehicles with module chips." loading="lazy" /></div>
             </figure>
             <ul class="legend">
-              <li><span class="b">1</span><span class="tx"><strong>Manage / Activity / Billing</strong> — manage active subscriptions, review what changed, and see your billing.</span></li>
-              <li><span class="b">2</span><span class="tx"><strong>Filters &amp; bulk actions</strong> — narrow by carrier or state, and apply changes to several vehicles at once.</span></li>
-              <li><span class="b">3</span><span class="tx"><strong>Subscription rows</strong> — each vehicle with its state and the active data modules.</span></li>
+              <li><span class="b">1</span><span class="tx"><strong>Manage / Activity / Billing</strong> — manage the vehicles you monitor, review what changed, and see your billing.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Counters</strong> — how many subscriptions are active right now, and how many are inactive.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Filters &amp; bulk actions</strong> — narrow by carrier or state, and apply a change to several vehicles at once.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>Subscription rows</strong> — each vehicle with its state and the data modules it currently sends.</span></li>
             </ul>
+          </div>
+
+          <h3>Reviewing what changed</h3>
+          <p>The <em>Activity</em> tab is the audit trail behind those subscriptions — every activation and de-activation, who made it, and when. It's the quickest way to answer “why is this vehicle no longer being monitored?”.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/subscriptions?tab=activity</div></div>
+              <div class="browserframe__img"><img src="assets/screens/subscriptions-activity.png" alt="The Subscriptions Activity tab with the 30-day activation counters, the date and action filters, the CSV export button and the log table." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Counters</strong> — activations and de-activations over the last 30 days.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Filters</strong> — narrow the log to a date range, or to one kind of action.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Export to CSV</strong> — download the log exactly as you've filtered it.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>The log</strong> — when it happened, what happened, which vehicle it affected, who did it and where it came from.</span></li>
+            </ul>
+          </div>
+
+          <h3>The monthly billing report</h3>
+          <p>The <em>Billing</em> tab turns those subscriptions into a monthly statement. Each line is one period a vehicle was monitored — so a vehicle whose modules changed mid-month appears more than once, with a line per period.</p>
+          <div class="shot reveal">
+            <figure class="browserframe">
+              <div class="browserframe__bar"><div class="browserframe__dots"><i></i><i></i><i></i></div>
+                <div class="browserframe__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>portal.co3.io/subscriptions · Billing</div></div>
+              <div class="browserframe__img"><img src="assets/screens/subscriptions-billing.png" alt="The Subscriptions Billing tab with the month picker, the plate and VIN search, the Download CSV button and the monthly report table." loading="lazy" /></div>
+            </figure>
+            <ul class="legend">
+              <li><span class="b">1</span><span class="tx"><strong>Billing period</strong> — pick the month you want to look at.</span></li>
+              <li><span class="b">2</span><span class="tx"><strong>Search</strong> — find one vehicle in the report by licence plate or VIN.</span></li>
+              <li><span class="b">3</span><span class="tx"><strong>Download CSV</strong> — take the whole month away as a spreadsheet.</span></li>
+              <li><span class="b">4</span><span class="tx"><strong>The report</strong> — per line: the vehicle and its VIN, the window it was monitored for, which modules were switched on, and the number of position pings counted.</span></li>
+            </ul>
+          </div>
+          <div class="callout note reveal">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+            <p>If the report doesn't appear the first time you open the tab, use <strong>Retry</strong> — the month is fetched separately from the rest of the page.</p>
           </div>
 
           <h3>Data modules you can subscribe to</h3>
           <div class="tags reveal">
             <span class="tag">GPS position</span>
             <span class="tag">ETA prediction</span>
-            <span class="tag">CO₂e emissions</span>
+            <span class="tag">CO₂ emissions</span>
             <span class="tag">Temperature</span>
             <span class="tag">Tachograph</span>
           </div>
@@ -800,7 +994,7 @@
         <!-- ================= BRANDING ================= -->
         <section class="section" id="branding">
           <div class="section__head reveal">
-            <div class="section__kicker"><span class="num">13</span> Invitation emails</div>
+            <div class="section__kicker"><span class="num">14</span> Invitation emails</div>
             <h2>Invitation Branding</h2>
             <p class="intro">Branding controls how your carrier-invitation emails look — your logo and colour palette — so partners instantly recognise that the invitation came from you. Open it from the Settings ⚙ menu.</p>
           </div>
@@ -855,7 +1049,7 @@
         <!-- ================= TEMPLATES ================= -->
         <section class="section" id="templates">
           <div class="section__head reveal">
-            <div class="section__kicker"><span class="num">14</span> Invitation emails</div>
+            <div class="section__kicker"><span class="num">15</span> Invitation emails</div>
             <h2>Email Templates</h2>
             <p class="intro">Where Branding sets the look, Templates set the words. Templates are the multilingual email content carriers receive when you invite them — and you choose which one to use each time you add a carrier. Open it from the Settings ⚙ menu — the page header itself reads <em>Email Notification Templates</em>.</p>
           </div>
@@ -942,6 +1136,7 @@
           <div class="section__head reveal">
             <div class="section__kicker"><span class="num">?</span> Help</div>
             <h2>Frequently asked questions</h2>
+            <p class="intro">A short FAQ answering what comes up most often — missing sidebar items, invitations that don't arrive, vehicles with fewer tabs than expected, and brandings you can't edit.</p>
           </div>
           <div class="faq reveal">
             <details>
@@ -987,6 +1182,7 @@
                 <tr><td><strong>Asset</strong></td><td>A connected vehicle — truck, trailer or van — visible to you because of a consent.</td></tr>
                 <tr><td><strong>Tracking</strong></td><td>A transport order: a shipment moving between stops, which you can follow on a map.</td></tr>
                 <tr><td><strong>Geofence</strong></td><td>A circular boundary around a saved location used to detect arrivals and proximity.</td></tr>
+                <tr><td><strong>Behaviour label</strong></td><td>What kind of stop a location is — <em>Operational</em>, <em>Handover</em>, <em>Waypoint</em> or <em>Service</em> — which changes how orders stopping there are treated.</td></tr>
                 <tr><td><strong>Tachograph</strong></td><td>The device that records a driver's driving and rest times; powers the Drive &amp; rest view.</td></tr>
                 <tr><td><strong>Next / Daily drive</strong></td><td>Drive &amp; rest gauges — how long a vehicle can legally keep driving now, and how much of today's permitted driving time remains.</td></tr>
                 <tr><td><strong>Telemetry</strong></td><td>Live measurements from a vehicle — speed, fuel, temperature, mileage, ignition.</td></tr>
@@ -1022,7 +1218,7 @@
 
   <!-- Command palette -->
   <div class="palette-backdrop" id="palette" aria-hidden="true">
-    <div class="palette" role="dialog" aria-label="Search the handbook">
+    <div class="palette" role="dialog" aria-modal="true" aria-label="Search the handbook">
       <div class="palette__in">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
         <input id="palette-input" type="text" placeholder="Search features, buttons, tasks…" autocomplete="off" spellcheck="false" />
